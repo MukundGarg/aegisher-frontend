@@ -1,4 +1,4 @@
-const API_URL = "http://localhost:5001/api";
+const API_URL = "https://aegisher-backend.onrender.com/api";
 // Smooth scrolling
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
