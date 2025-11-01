@@ -1,9 +1,10 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>AegiSher - AI-Powered Women Safety Platform</title>
+  <title>AegiSher - Women Safety Platform</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
@@ -12,266 +13,181 @@
     <div class="nav-container">
       <div class="logo">AegiSher</div>
       <ul class="nav-links">
-        <li><a href="#features">Features</a></li>
-        <li><a href="#how-it-works">How It Works</a></li>
-        <li><a href="#demo">Demo</a></li>
-        <li><a href="#contact">Contact</a></li>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#safety-reports">Safety Reports</a></li>
+        <li><a href="#trusted-circle">Trusted Circle</a></li>
+        <li><a href="#sos">SOS</a></li>
+        <li><a href="#safe-routes">Safe Routes</a></li>
+        <li><a href="#danger-prediction">Danger Prediction</a></li>
       </ul>
-      <a href="#demo" class="cta-btn">Get Started</a>
     </div>
   </nav>
 
   <!-- Hero Section -->
-  <section class="hero">
-    <div class="hero-content fade-in">
-      <h1>Your Intelligent Digital Guardian</h1>
-      <p>
-        AegiSher uses AI to predict danger before it happens, providing
-        real-time safety alerts, smart navigation, and instant emergency
-        response for women everywhere.
-      </p>
-      <a href="#demo" class="btn-primary">Request Early Access</a>
-      <div class="usp">
-        "AegiSher doesn't just react in emergencies — it predicts and prevents."
-      </div>
-    </div>
+  <section id="home" class="hero">
+    <h1>AegiSher</h1>
+    <p>Your Personal Safety Companion</p>
   </section>
 
-  <!-- Target Users -->
-  <section>
+  <!-- Safety Reports Section -->
+  <section id="safety-reports" class="feature-section">
     <div class="container">
-      <h2 class="section-title">Built For You</h2>
-      <p class="section-subtitle">
-        Empowering women at every stage of life with intelligent safety
-        solutions
-      </p>
-      <div class="target-users">
-        <div class="user-badge">👩‍🎓 Students</div>
-        <div class="user-badge">👩‍💼 Working Professionals</div>
-        <div class="user-badge">✈️ Travelers</div>
-        <div class="user-badge">👩 All Women</div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Features -->
-  <section id="features">
-    <div class="container">
-      <h2 class="section-title">Intelligent Safety Features</h2>
-      <p class="section-subtitle">
-        Advanced AI technology designed to keep you safe, every step of the way
+      <h2 class="section-title">Community Safety Reports</h2>
+      <p class="section-description">
+        Report incidents and view community alerts in your area
       </p>
 
-      <div class="features-grid">
-        <div class="feature-card">
-          <div class="feature-icon">🧠</div>
-          <h3>AI Predictive Danger Index</h3>
-          <p>
-            Our AI learns risk patterns from overcrowding, recent SOS alerts,
-            lighting conditions, footfall data, and crime trends to predict
-            dangerous areas before you reach them.
-          </p>
+      <div class="reports-grid">
+        <div class="report-form-card">
+          <h3>Submit a Report</h3>
+          <form id="safety-report-form">
+            <div class="form-group">
+              <label for="incident-type">Incident Type</label>
+              <select id="incident-type" required>
+                <option value="">Select type...</option>
+                <option value="harassment">Harassment</option>
+                <option value="theft">Theft</option>
+                <option value="suspicious">Suspicious Activity</option>
+                <option value="assault">Assault</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="location">Location</label>
+              <input type="text" id="location" placeholder="Street or area" required />
+            </div>
+            <div class="form-group">
+              <label for="description">Description</label>
+              <textarea id="description" rows="4" placeholder="Describe what happened..." required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit Report</button>
+          </form>
+          <div id="report-message" class="message"></div>
         </div>
 
-        <div class="feature-card">
-          <div class="feature-icon">🗺️</div>
-          <h3>Smart Safe-Route Navigation</h3>
-          <p>
-            Get intelligent route suggestions that prioritize your safety over
-            speed. AegiSher recommends safer alternate routes even if they take
-            a bit longer.
-          </p>
-        </div>
-
-        <div class="feature-card">
-          <div class="feature-icon">🚨</div>
-          <h3>Silent SOS + Auto Activation</h3>
-          <p>
-            Emergency alerts trigger automatically through voice keywords, fall
-            detection, or suspicious motion patterns. Help arrives even when you
-            can't press a button.
-          </p>
-        </div>
-
-        <div class="feature-card">
-          <div class="feature-icon">👥</div>
-          <h3>Trusted Circle with Live Tracking</h3>
-          <p>
-            Share your location with trusted contacts in real-time. Smart status
-            updates and auto check-ins alert your circle if you stop moving or
-            are alone in an unsafe area.
-          </p>
-        </div>
-
-        <div class="feature-card">
-          <div class="feature-icon">✅</div>
-          <h3>Community Safety Validation</h3>
-          <p>
-            Women can share verified safety feedback about locations, helping
-            improve the accuracy of our danger map and protecting the entire
-            community.
-          </p>
-        </div>
-
-        <div class="feature-card">
-          <div class="feature-icon">📊</div>
-          <h3>Proof-of-Safety Analytics</h3>
-          <p>
-            AegiSher learns your favorite safe routes and personal patterns,
-            providing earlier warnings in unsafe situations tailored
-            specifically to you.
-          </p>
+        <div class="reports-list-card">
+          <h3>Recent Reports</h3>
+          <div id="reports-list" class="reports-container">
+            <p class="placeholder-text">Loading latest community reports...</p>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- How It Works -->
-  <section id="how-it-works" class="how-it-works">
+  <!-- Trusted Circle Section -->
+  <section id="trusted-circle" class="feature-section">
     <div class="container">
-      <h2 class="section-title">How AegiSher Works</h2>
-      <p class="section-subtitle">Simple, powerful protection in three steps</p>
+      <h2 class="section-title">Trusted Circle</h2>
+      <p class="section-description">
+        Manage your emergency contacts who will be notified during alerts
+      </p>
 
-      <div class="steps">
-        <div class="step">
-          <div class="step-number">1</div>
-          <h3>Set Up Your Profile</h3>
-          <p>
-            Create your trusted circle, set preferences, and let AegiSher learn
-            your safe routes and daily patterns.
-          </p>
+      <div class="trusted-circle-grid">
+        <div class="feature-card">
+          <h3>Add Trusted Contact</h3>
+          <form id="trusted-circle-form">
+            <div class="form-group">
+              <label for="contact-name">Name</label>
+              <input type="text" id="contact-name" required />
+            </div>
+            <div class="form-group">
+              <label for="contact-phone">Phone</label>
+              <input type="text" id="contact-phone" required />
+            </div>
+            <button type="submit" class="btn btn-primary">Add Contact</button>
+          </form>
+          <div id="trusted-circle-message" class="message"></div>
         </div>
 
-        <div class="step">
-          <div class="step-number">2</div>
-          <h3>AI Monitors & Predicts</h3>
-          <p>
-            Our AI continuously analyzes your location, surroundings, and
-            real-time safety data to predict potential dangers.
-          </p>
-        </div>
-
-        <div class="step">
-          <div class="step-number">3</div>
-          <h3>Instant Protection</h3>
-          <p>
-            Receive smart alerts, safe route suggestions, and automatic
-            emergency response when needed.
-          </p>
+        <div class="feature-card">
+          <h3>Your Trusted Contacts</h3>
+          <div id="trusted-contacts-list" class="contacts-container">
+            <p class="placeholder-text">No contacts added yet</p>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- CTA -->
-  <section id="demo" class="cta-section">
+  <!-- SOS Section -->
+  <section id="sos" class="feature-section sos-section">
     <div class="container">
-      <h2>Ready to Feel Safer?</h2>
-      <p>
-        Join thousands of women who trust AegiSher as their intelligent safety
-        companion.
+      <h2 class="section-title">Emergency SOS</h2>
+      <p class="section-description">
+        Send instant emergency alerts to your trusted circle and authorities
       </p>
-      <div class="cta-buttons">
-        <a href="#" class="btn-primary">Request Demo</a>
-        <a href="#contact" class="btn-secondary">Contact Us</a>
+
+      <div class="sos-container">
+        <div class="sos-card">
+          <div class="sos-icon">🚨</div>
+          <h3>Need Help Now?</h3>
+          <p>
+            Press and hold the button below to send an emergency alert with your current location.
+          </p>
+          <button id="sos-button" class="btn-sos">HOLD FOR SOS</button>
+          <div id="sos-message" class="message"></div>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- Contact -->
-  <section id="contact" class="contact">
+  <!-- Safe Routes -->
+  <section id="safe-routes" class="feature-section">
     <div class="container">
-      <h2 class="section-title" style="-webkit-text-fill-color: white;">
-        Get In Touch
-      </h2>
-      <p class="section-subtitle" style="color: rgba(255,255,255,0.8);">
-        Have questions? Want to partner with us? We'd love to hear from you.
-      </p>
-      <div class="contact-info">
-        <p>
-          Email:
-          <a href="mailto:hello@aegisher.com">hello@aegisher.com</a>
-        </p>
-        <p style="margin-top: 1rem; opacity: 0.8;">
-          We typically respond within 24 hours
-        </p>
+      <h2 class="section-title">Safe Route Navigator</h2>
+      <p class="section-description">Find the safest path to your destination</p>
+      <div class="routes-grid">
+        <div class="feature-card">
+          <h3>Plan Your Route</h3>
+          <form id="safe-routes-form">
+            <div class="form-group">
+              <label for="route-from">From</label>
+              <input type="text" id="route-from" required />
+            </div>
+            <div class="form-group">
+              <label for="route-to">To</label>
+              <input type="text" id="route-to" required />
+            </div>
+            <button type="submit" class="btn btn-primary">Find Route</button>
+          </form>
+        </div>
+
+        <div class="feature-card">
+          <h3>Recommended Route</h3>
+          <div id="route-result" class="route-result">
+            <p class="placeholder-text">Enter route details to view results.</p>
+          </div>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- Live Safety Reports Section -->
-  <section id="live-reports">
+  <!-- Danger Prediction -->
+  <section id="danger-prediction" class="feature-section">
     <div class="container">
-      <h2 class="section-title">Live Safety Reports Nearby</h2>
-      <p class="section-subtitle">
-        Real-time safety feedback from AegiSher community members
+      <h2 class="section-title">Danger Zone Analysis</h2>
+      <p class="section-description">
+        AI-powered analysis to predict risk levels in different areas
       </p>
-      <div id="reports-list" class="features-grid"></div>
+      <div class="prediction-container">
+        <div class="feature-card prediction-card">
+          <h3>Analyze Location Safety</h3>
+          <form id="danger-prediction-form">
+            <div class="form-group">
+              <label for="prediction-location">Location</label>
+              <input type="text" id="prediction-location" required />
+            </div>
+            <button type="submit" class="btn btn-primary">Analyze Risk</button>
+          </form>
+          <div id="prediction-result" class="prediction-result">
+            <p class="placeholder-text">Results will appear here</p>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
-  <!-- Safety Report Submission Section -->
-  <section id="report-section" style="padding: 2rem; text-align: center;">
-    <h2>📝 Submit a Safety Report</h2>
-    <p>Share your experience to help other women stay safe.</p>
-
-    <form id="reportForm" style="margin-top: 1rem;">
-      <label>
-        📍 Location Name:
-        <input
-          type="text"
-          id="placeName"
-          placeholder="Enter location"
-          required
-        />
-      </label>
-      <br /><br />
-      <label>
-        ⭐ Safety Rating (1–5):
-        <input type="number" id="safetyRating" min="1" max="5" required />
-      </label>
-      <br /><br />
-      <label>
-        <label>
-  🧭 Report Type:
-  <select id="reportType" required>
-    <option value="general">General</option>
-    <option value="harassment">Harassment</option>
-    <option value="unsafe_area">Unsafe Area</option>
-    <option value="other">Other</option>
-  </select>
-</label>
-      <br /><br />
-      <label>
-        💬 Comment:
-        <textarea id="comment" placeholder="Describe what happened"></textarea>
-      </label>
-      <br /><br />
-      <label>
-  🌙 Time of Day:
-  <select id="timeOfDay">
-    <option value="morning">Morning</option>
-    <option value="afternoon">Afternoon</option>
-    <option value="evening">Evening</option>
-    <option value="night">Night</option>
-  </select>
-</label>
-      <br /><br />
-      <button type="submit" id="submitReportBtn">Submit Report</button>
-    </form>
-
-    <p id="responseMessage" style="margin-top: 1rem; color: green;"></p>
-  </section>
-
-  <!-- Footer -->
-  <footer>
-    <p>
-      &copy; 2025 AegiSher. All rights reserved. | Making the world safer, one
-      journey at a time.
-    </p>
-  </footer>
-
-  <!-- ✅ Script placed LAST so DOM is ready -->
   <script src="script.js"></script>
 </body>
 </html>
